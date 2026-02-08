@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Member Portal</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .sidebar { background: linear-gradient(180deg, #1540ce 0%, #641896 100%); }
+        .nav-link:hover, .nav-link.active { border-left-color: #086e21; }
+        .sidebar-header .logo { background: #10b981; }
+        .rounded {border-radius: 20%;}
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <!-- Member Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo"><img src="../logo.png" alt="" class="rounded" height="45px"></i></div>
+                <div class="brand">
+                    <h2>Kusina University</h2>
+                    <span>Member Portal</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Menu</div>
+                    <a href="dashboard.html" class="nav-link active">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="my-account.html" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>My Account</span>
+                    </a>
+                    <a href="my-loans.html" class="nav-link">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <span>My Loans</span>
+                    </a>
+                    <a href="apply-loan.html" class="nav-link">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Apply for Loan</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">History</div>
+                    <a href="payment-history.html" class="nav-link">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Payment History</span>
+                    </a>
+                    <a href="deposit-history.html" class="nav-link">
+                        <i class="fas fa-piggy-bank"></i>
+                        <span>Deposit History</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Account</div>
+                    <a href="../index.html" class="nav-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar" style="background: #10b981;">JD</div>
+                    <div class="user-details">
+                        <h4>Juan Dela Cruz</h4>
+                        <span><i class="fas fa-circle"></i> Online</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <div class="page-title">
+                        <h1>My Dashboard</h1>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- Welcome Banner -->
+                <div class="card" style="background: linear-gradient(135deg, #047857 0%, #10b981 100%); color: white; margin-bottom: 25px;">
+                    <div class="card-body">
+                        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                            <div>
+                                <h2 style="margin-bottom: 10px;">Welcome back, Juan Dela Cruz! 👋</h2>
+                                <a href="apply-loan.html" class="btn" style="background: white; color: #047857;">
+                                    <i class="fas fa-plus"></i> Apply for New Loan
+                                </a>
+                            </div>
+                            <div style="text-align: right;">
+                                <p style="opacity: 0.8; font-size: 14px;">Member ID</p>
+                                <h3>MEM-002</h3>
+                                <p style="opacity: 0.8; font-size: 14px; margin-top: 10px;">Member Since: Jan 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Summary Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon success">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>₱25,500.00</h3>
+                            <p>Savings Balance</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>2</h3>
+                            <p>Active Loans</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-peso-sign"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>₱42,500.00</h3>
+                            <p>Total Outstanding</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon danger">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Jan 20</h3>
+                            <p>Next Due Date</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="quick-actions">
+                            <a href="apply-loan.html" class="quick-action-btn">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Apply for Loan</span>
+                            </a>
+                            <a href="my-loans.html" class="quick-action-btn">
+                                <i class="fas fa-eye"></i>
+                                <span>View My Loans</span>
+                            </a>
+                            <a href="payment-history.html" class="quick-action-btn">
+                                <i class="fas fa-history"></i>
+                                <span>Payment History</span>
+                            </a>
+                            <a href="my-account.html" class="quick-action-btn">
+                                <i class="fas fa-user-edit"></i>
+                                <span>Update Profile</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Loans Overview -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-hand-holding-usd"></i> My Active Loans</h2>
+                        <a href="my-loans.html" class="btn btn-primary btn-sm">View All</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Loan ID</th>
+                                        <th>Type</th>
+                                        <th>Principal</th>
+                                        <th>Balance</th>
+                                        <th>Monthly Due</th>
+                                        <th>Next Payment</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>LN-001</td>
+                                        <td>Personal Loan</td>
+                                        <td>₱50,000.00</td>
+                                        <td>₱32,500.00</td>
+                                        <td>₱4,666.67</td>
+                                        <td>Jan 20, 2024</td>
+                                        <td><span class="badge badge-success">Current</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>LN-002</td>
+                                        <td>Emergency Loan</td>
+                                        <td>₱15,000.00</td>
+                                        <td>₱10,000.00</td>
+                                        <td>₱2,750.00</td>
+                                        <td>Jan 25, 2024</td>
+                                        <td><span class="badge badge-success">Current</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Transactions -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-clock"></i> Recent Transactions</h2>
+                        <a href="payment-history.html" class="btn btn-secondary btn-sm">View All</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Jan 15, 2024</td>
+                                        <td><span class="badge badge-success">Payment</span></td>
+                                        <td>Loan payment for LN-001</td>
+                                        <td>₱4,666.67</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jan 10, 2024</td>
+                                        <td><span class="badge badge-warning">Deposit</span></td>
+                                        <td>Savings deposit</td>
+                                        <td>₱5,000.00</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jan 5, 2024</td>
+                                        <td><span class="badge badge-success">Payment</span></td>
+                                        <td>Loan payment for LN-002</td>
+                                        <td>₱2,750.00</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dec 20, 2023</td>
+                                        <td><span class="badge badge-primary">Loan</span></td>
+                                        <td>Emergency Loan Released (LN-002)</td>
+                                        <td>₱15,000.00</td>
+                                        <td><span class="badge badge-success">Released</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Reminder -->
+                <div class="card" style="border-left: 4px solid var(--warning-color);">
+                    <div class="card-body">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <i class="fas fa-exclamation-circle" style="font-size: 24px; color: var(--warning-color);"></i>
+                            <div>
+                                <h4 style="margin-bottom: 5px;">Payment Reminder</h4>
+                                <p style="margin: 0; color: var(--gray-color);">
+                                    Your next payment of <strong>₱4,666.67</strong> for Loan LN-001 is due on <strong>January 20, 2024</strong>. 
+                                    Please ensure timely payment to avoid penalties.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

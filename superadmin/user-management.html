@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - SuperAdmin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div>
+                    <style>
+                        .rounded {border-radius: 20%;}
+                    </style>
+                    <img src="../logo.png" class="rounded" height="45px" width="45px">
+                </div>
+                <div class="brand">
+                    <h2>Kusina University</h2>
+                    <span>SuperAdmin Panel</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main Menu</div>
+                    <a href="dashboard.html" class="nav-link"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+                    <a href="accounts.html" class="nav-link"><i class="fas fa-users"></i><span>Accounts</span></a>
+                    <a href="transactions.html" class="nav-link"><i class="fas fa-exchange-alt"></i><span>Transaction Records</span></a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Management</div>
+                    <a href="user-management.html" class="nav-link active"><i class="fas fa-user-cog"></i><span>User Management</span></a>
+                    <a href="reports.html" class="nav-link"><i class="fas fa-chart-bar"></i><span>Reports</span></a>
+                    <a href="history-logs.html" class="nav-link"><i class="fas fa-history"></i><span>History Logs</span></a>
+                </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <div class="page-title">
+                        <h1>User Management</h1>
+                        <span class="breadcrumb">Home / User Management</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="user-dropdown">
+                        <button class="user-button" id="userBtn">
+                            <div class="user-avatar">JV</div>
+                            <div class="user-details">
+                                <h1 class="user-name">Jane Vitorillo</h1>
+                                <h2 class="user-role">SuperAdmin</h2>
+                            </div>
+                            <i class="fas fa-caret-down"></i>
+                        </button>
+                        <!-- Dropdown Menu -->
+                       <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            Profile
+                        </a>
+                        <a href="settings.html" class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            Settings
+                        </a>
+                        <a href="../index.html" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                     </div>   
+                    </div>
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- Role Statistics -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon danger"><i class="fas fa-user-shield"></i></div>
+                        <div class="stat-details"><h3>2</h3><p>Super Admins</p></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon primary"><i class="fas fa-user-tie"></i></div>
+                        <div class="stat-details"><h3>5</h3><p>Admins</p></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon warning"><i class="fas fa-user-cog"></i></div>
+                        <div class="stat-details"><h3>12</h3><p>Managers</p></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon success"><i class="fas fa-users"></i></div>
+                        <div class="stat-details"><h3>1,215</h3><p>Members</p></div>
+                    </div>
+                </div>
+
+                <!-- Role Assignment Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user-tag"></i> Role Assignment</h2>
+                        <button class="btn btn-primary" onclick="openModal('assignRoleModal')">
+                            <i class="fas fa-exchange-alt"></i> Assign Role
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="toolbar">
+                            <div class="search-box">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Search users...">
+                            </div>
+                            <div class="filter-group">
+                                <select class="form-control" style="width: auto;">
+                                    <option value="">All Roles</option>
+                                    <option value="superadmin">Super Admin</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="manager">Manager</option>
+                                    <option value="member">Member</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>User ID</th>
+                                        <th>Full Name</th>
+                                        <th>Email</th>
+                                        <th>Current Role</th>
+                                        <th>Status</th>
+                                        <th>Last Login</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>USR-001</td>
+                                        <td>John Doe</td>
+                                        <td>john.doe@email.com</td>
+                                        <td><span class="badge badge-primary">Admin</span></td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td>Today, 10:30 AM</td>
+                                        <td class="table-actions">
+                                            <button class="btn btn-warning btn-sm" onclick="openModal('changeRoleModal')">
+                                                <i class="fas fa-user-tag"></i> Change Role
+                                            </button>
+                                            <button class="btn btn-secondary btn-sm">
+                                                <i class="fas fa-key"></i> Reset
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>USR-002</td>
+                                        <td>Jane Smith</td>
+                                        <td>jane.smith@email.com</td>
+                                        <td><span class="badge badge-warning">Manager</span></td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td>Today, 9:15 AM</td>
+                                        <td class="table-actions">
+                                            <button class="btn btn-warning btn-sm"><i class="fas fa-user-tag"></i> Change Role</button>
+                                            <button class="btn btn-secondary btn-sm"><i class="fas fa-key"></i> Reset</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>USR-003</td>
+                                        <td>Mike Johnson</td>
+                                        <td>mike.j@email.com</td>
+                                        <td><span class="badge badge-secondary">Member</span></td>
+                                        <td><span class="badge badge-success">Active</span></td>
+                                        <td>Yesterday, 3:45 PM</td>
+                                        <td class="table-actions">
+                                            <button class="btn btn-warning btn-sm"><i class="fas fa-user-tag"></i> Change Role</button>
+                                            <button class="btn btn-secondary btn-sm"><i class="fas fa-key"></i> Reset</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span>Showing 1 to 3 of 1,234 entries</span>
+                        <div class="pagination">
+                            <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="pagination-btn active">1</button>
+                            <button class="pagination-btn">2</button>
+                            <button class="pagination-btn">3</button>
+                            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Change Role Modal -->
+    <div class="modal-overlay" id="changeRoleModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-tag"></i> Change User Role</h3>
+                <button class="modal-close" onclick="closeModal('changeRoleModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>User</label>
+                        <input type="text" class="form-control" value="John Doe (USR-001)" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Current Role</label>
+                        <input type="text" class="form-control" value="Admin" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>New Role</label>
+                        <select class="form-control">
+                            <option value="">Select New Role</option>
+                            <option value="admin">Admin</option>
+                            <option value="manager">Manager</option>
+                            <option value="member">Member</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Reason for Change</label>
+                        <textarea class="form-control" placeholder="Enter reason for role change"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('changeRoleModal')">Cancel</button>
+                <button class="btn btn-warning"><i class="fas fa-save"></i> Update Role</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assign Role Modal -->
+    <div class="modal-overlay" id="assignRoleModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> Assign Role to User</h3>
+                <button class="modal-close" onclick="closeModal('assignRoleModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Select User</label>
+                        <select class="form-control">
+                            <option value="">Search or Select User</option>
+                            <option>John Doe - Member</option>
+                            <option>Jane Smith - Member</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Assign Role</label>
+                        <select class="form-control">
+                            <option value="">Select Role</option>
+                            <option value="admin">Admin</option>
+                            <option value="manager">Manager</option>
+                            <option value="member">Member</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('assignRoleModal')">Cancel</button>
+                <button class="btn btn-primary"><i class="fas fa-check"></i> Assign Role</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

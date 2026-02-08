@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Manager Panel</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .sidebar { background: linear-gradient(180deg, #5a19d1 0%, #6e2de7 100%); }
+        .nav-link:hover, .nav-link.active { border-left-color: #3d0474; }
+        .sidebar-header .logo { background: #f59e0b; }
+        .rounded {border-radius: 20%;}
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <!-- Manager Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo"><img src="../logo.png" alt="" height="45px" class="rounded"></div>
+                <div class="brand">
+                    <h2>Kusina University</h2>
+                    <span>Manager Panel</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main Menu</div>
+                    <a href="dashboard.html" class="nav-link active">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="members.html" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>View Members</span>
+                    </a>
+                    <a href="transactions.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transactions</span>
+                    </a>
+                    <a href="transaction-history.html" class="nav-link">
+                        <i class="fas fa-history"></i>
+                        <span>Transaction History</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Reports</div>
+                    <a href="reports.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>View Reports</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Account</div>
+                    <a href="../index.html" class="nav-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar" style="background: #f59e0b;">MG</div>
+                    <div class="user-details">
+                        <h4>Manager User</h4>
+                        <span><i class="fas fa-circle"></i> Online</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <div class="page-title">
+                        <h1>Manager Dashboard</h1>
+                        <span class="breadcrumb">Home / Dashboard</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn"><i class="fas fa-bell"></i><span class="notification-badge"></span></button>
+                    <button class="header-btn"><i class="fas fa-envelope"></i></button>
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- Welcome -->
+                <div class="card" style="background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%); color: white; margin-bottom: 25px;">
+                    <div class="card-body">
+                        <h2 style="margin-bottom: 10px;">Welcome back, Manager! 👋</h2>
+                        <p style="opacity: 0.9;">Here's your overview for today.</p>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon primary"><i class="fas fa-users"></i></div>
+                        <div class="stat-details">
+                            <h3>450</h3>
+                            <p>Assigned Members</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon success"><i class="fas fa-money-bill-wave"></i></div>
+                        <div class="stat-details">
+                            <h3>28</h3>
+                            <p>Today's Payments</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon warning"><i class="fas fa-piggy-bank"></i></div>
+                        <div class="stat-details">
+                            <h3>15</h3>
+                            <p>Today's Deposits</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon danger"><i class="fas fa-peso-sign"></i></div>
+                        <div class="stat-details">
+                            <h3>₱125K</h3>
+                            <p>Today's Collection</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="quick-actions">
+                            <button class="quick-action-btn" onclick="openModal('depositModal')">
+                                <i class="fas fa-piggy-bank"></i>
+                                <span>Process Deposit</span>
+                            </button>
+                            <button class="quick-action-btn" onclick="openModal('paymentModal')">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Receive Payment</span>
+                            </button>
+                            <a href="members.html" class="quick-action-btn">
+                                <i class="fas fa-search"></i>
+                                <span>Search Member</span>
+                            </a>
+                            <a href="transaction-history.html" class="quick-action-btn">
+                                <i class="fas fa-history"></i>
+                                <span>View History</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note -->
+                <div class="card" style="border-left: 4px solid var(--warning-color);">
+                    <div class="card-body">
+                        <p style="margin: 0; color: var(--gray-color);">
+                            <i class="fas fa-info-circle" style="color: var(--warning-color);"></i>
+                            <strong>Note:</strong> As a Manager, you can process deposits and payments. For loan creation or member management, please contact an Admin.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Recent Transactions -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-clock"></i> Recent Transactions (Today)</h2>
+                        <a href="transactions.html" class="btn btn-primary btn-sm">View All</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Trans. ID</th>
+                                        <th>Member</th>
+                                        <th>Type</th>
+                                        <th>Amount</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#TRX-2001</td>
+                                        <td>Carlos Mendoza</td>
+                                        <td><span class="badge badge-success">Payment</span></td>
+                                        <td>₱5,500.00</td>
+                                        <td>10:45 AM</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#TRX-2002</td>
+                                        <td>Elena Bautista</td>
+                                        <td><span class="badge badge-warning">Deposit</span></td>
+                                        <td>₱8,000.00</td>
+                                        <td>10:30 AM</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#TRX-2003</td>
+                                        <td>Roberto Cruz</td>
+                                        <td><span class="badge badge-success">Payment</span></td>
+                                        <td>₱3,200.00</td>
+                                        <td>09:15 AM</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Deposit Modal -->
+    <div class="modal-overlay" id="depositModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-piggy-bank"></i> Process Deposit</h3>
+                <button class="modal-close" onclick="closeModal('depositModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Select Member</label>
+                        <select class="form-control">
+                            <option>Search member...</option>
+                            <option>Carlos Mendoza - MEM-101</option>
+                            <option>Elena Bautista - MEM-102</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Current Balance</label>
+                        <input type="text" class="form-control" value="₱15,000.00" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Deposit Amount</label>
+                        <input type="number" class="form-control" placeholder="₱0.00">
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <select class="form-control">
+                            <option>Cash</option>
+                            <option>Check</option>
+                            <option>Bank Transfer</option>
+                            <option>GCash</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Reference No. (Optional)</label>
+                        <input type="text" class="form-control" placeholder="Transaction reference">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('depositModal')">Cancel</button>
+                <button class="btn btn-success"><i class="fas fa-plus"></i> Process Deposit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal-overlay" id="paymentModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-money-bill-wave"></i> Receive Payment</h3>
+                <button class="modal-close" onclick="closeModal('paymentModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Select Member</label>
+                        <select class="form-control">
+                            <option>Search member...</option>
+                            <option>Carlos Mendoza - MEM-101</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Active Loan</label>
+                        <select class="form-control">
+                            <option>LN-201 - ₱35,000 (Personal)</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Outstanding</label>
+                            <input type="text" class="form-control" value="₱28,500.00" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>Monthly Due</label>
+                            <input type="text" class="form-control" value="₱3,250.00" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Amount</label>
+                        <input type="number" class="form-control" placeholder="₱0.00">
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <select class="form-control">
+                            <option>Cash</option>
+                            <option>Check</option>
+                            <option>Bank Transfer</option>
+                            <option>GCash</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('paymentModal')">Cancel</button>
+                <button class="btn btn-success"><i class="fas fa-check"></i> Process Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

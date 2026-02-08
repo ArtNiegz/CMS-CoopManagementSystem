@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Loans - Member Portal</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .sidebar { background: linear-gradient(180deg, #1540ce 0%, #641896 100%); }
+        .nav-link:hover, .nav-link.active { border-left-color: #086e21; }
+        .sidebar-header .logo { background: #10b981; }
+        .rounded {border-radius: 20%;}
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <!-- Member Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo"><img src="../logo.png" alt="" class="rounded" height="45px"></i></div>
+                <div class="brand">
+                    <h2>Kusina University</h2>
+                    <span>Member Portal</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Menu</div>
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="my-account.html" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>My Account</span>
+                    </a>
+                    <a href="my-loans.html" class="nav-link active">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <span>My Loans</span>
+                    </a>
+                    <a href="apply-loan.html" class="nav-link">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Apply for Loan</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">History</div>
+                    <a href="payment-history.html" class="nav-link">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Payment History</span>
+                    </a>
+                    <a href="deposit-history.html" class="nav-link">
+                        <i class="fas fa-piggy-bank"></i>
+                        <span>Deposit History</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Account</div>
+                    <a href="../index.html" class="nav-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar" style="background: #10b981;">JD</div>
+                    <div class="user-details">
+                        <h4>Juan Dela Cruz</h4>
+                        <span><i class="fas fa-circle"></i> Online</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <div class="page-title">
+                        <h1>My Loans</h1>
+                        <span class="breadcrumb">Home / My Loans</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <a href="apply-loan.html" class="btn btn-primary btn-sm">
+                        <i class="fas fa-plus"></i> Apply for Loan
+                    </a>
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- Loan Summary -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>5</h3>
+                            <p>Total Loans</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon success">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>3</h3>
+                            <p>Completed</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-spinner"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>2</h3>
+                            <p>Active</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon danger">
+                            <i class="fas fa-peso-sign"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>₱42.5K</h3>
+                            <p>Outstanding</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Loans -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-spinner"></i> Active Loans</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- Loan Card 1 -->
+                        <div class="loan-card">
+                            <div class="loan-card-header">
+                                <div class="loan-card-title">
+                                    <h3>Personal Loan</h3>
+                                    <span>Loan ID: LN-001</span>
+                                </div>
+                                <span class="badge badge-success">Current</span>
+                            </div>
+                            <div class="loan-details-grid">
+                                <div class="loan-detail-item">
+                                    <label>Principal Amount</label>
+                                    <p>₱50,000.00</p>
+                                </div>
+                                <div class="loan-detail-item">
+                                    <label>Interest Rate</label>
+                                    <p>12% per annum</p>
+                                </div>
+                                <div class="loan-detail-item">
+                                    <label>Term</label>
+                                    <p>12 Months</p>
+                                </div>
+                                <div class="loan-detail-item">
+                                    <label>Monthly Payment</label>
+                                    <p>₱4,666.67</p>
+                                </div>
+                                <div class="loan-detail-item">
+                                    <label>Outstanding Balance</label>
+                                    <p style="color: var(--warning-color);">₱32,500.00</p>
+                                </div>
+                                <div class="loan-detail-item">
+                                    <label>Next Due Date</label>
+                                    <p>January 20, 2024</p>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 35%;"></div>
+                            </div>
+                            <div class="progress-label">
+                                <span>35% Paid (₱17,500.00)</span>
+                                <span>₱32,500.00 Remaining</span>
+                            </div>
+                            <div style="margin-top: 20px;">
+                                <button class="btn btn-primary btn-sm" onclick="openModal('loanDetailsModal')">
+                                    <i class="fas fa-eye"></i> View Details
+                                </button>
+                                <button class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-calendar-alt"></i> Payment Schedule
+                                </button>
+                                <button class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-print"></i> Print Statement
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Loan Card 2 -->
+                        <div class="loan-card">
+                            <div class="loan-card-header">
+                                <div class="loan-card-title">
+                                    <h3>Emergency Loan</h3>
+                                    <span>Loan ID: LN-002</span>
+                                </div>
+                                <span class="badge badge-success">Current</span>
+                            </div>
+                            <div class="loan-details-grid">
+                                <div class="loan-detail-item">
+                                    <label>Principal Amount</label>
+                                    <p>₱15,000.00</p>
+                                </div>
+                                <div class="loan-detail-item">
+                                    <label>Interest Rate</label>
+                                    <p>10% per annum</p>
+                                </div>
+                                <div class="loan-detail-item">
+                                    <label>Term</label>
+                                    <p>6 Months</p>
+                                </div>
+                                <div class="loan-detail-item">
+                                    <label>Monthly Payment</label>
+                                    <p>₱2,750.00</p>
+                                </div>
+                                <div class="loan-detail-item">
+                                    <label>Outstanding Balance</label>
+                                    <p style="color: var(--warning-color);">₱10,000.00</p>
+                                </div>
+                                <div class="loan-detail-item">
+                                    <label>Next Due Date</label>
+                                    <p>January 25, 2024</p>
+                                </div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 33%;"></div>
+                            </div>
+                            <div class="progress-label">
+                                <span>33% Paid (₱5,000.00)</span>
+                                <span>₱10,000.00 Remaining</span>
+                            </div>
+                            <div style="margin-top: 20px;">
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-eye"></i> View Details
+                                </button>
+                                <button class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-calendar-alt"></i> Payment Schedule
+                                </button>
+                                <button class="btn btn-secondary btn-sm">
+                                    <i class="fas fa-print"></i> Print Statement
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Completed Loans -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-check-circle"></i> Completed Loans</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Loan ID</th>
+                                        <th>Type</th>
+                                        <th>Principal</th>
+                                        <th>Total Paid</th>
+                                        <th>Term</th>
+                                        <th>Date Completed</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>LN-003</td>
+                                        <td>Personal Loan</td>
+                                        <td>₱30,000.00</td>
+                                        <td>₱33,600.00</td>
+                                        <td>12 Months</td>
+                                        <td>Dec 15, 2023</td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-secondary btn-sm"><i class="fas fa-print"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>LN-004</td>
+                                        <td>Emergency Loan</td>
+                                        <td>₱10,000.00</td>
+                                        <td>₱10,500.00</td>
+                                        <td>6 Months</td>
+                                        <td>Sep 20, 2023</td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-secondary btn-sm"><i class="fas fa-print"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>LN-005</td>
+                                        <td>Personal Loan</td>
+                                        <td>₱20,000.00</td>
+                                        <td>₱22,400.00</td>
+                                        <td>12 Months</td>
+                                        <td>Mar 10, 2023</td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button>
+                                            <button class="btn btn-secondary btn-sm"><i class="fas fa-print"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loan Details Modal -->
+    <div class="modal-overlay" id="loanDetailsModal">
+        <div class="modal modal-lg">
+            <div class="modal-header">
+                <h3><i class="fas fa-file-invoice-dollar"></i> Loan Details - LN-001</h3>
+                <button class="modal-close" onclick="closeModal('loanDetailsModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px;">
+                    <div>
+                        <h4 style="color: var(--gray-color); margin-bottom: 15px;">Loan Information</h4>
+                        <p><strong>Loan ID:</strong> LN-001</p>
+                        <p><strong>Loan Type:</strong> Personal Loan</p>
+                        <p><strong>Purpose:</strong> Home Improvement</p>
+                        <p><strong>Date Applied:</strong> Oct 15, 2023</p>
+                        <p><strong>Date Approved:</strong> Oct 18, 2023</p>
+                        <p><strong>Date Released:</strong> Oct 20, 2023</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--gray-color); margin-bottom: 15px;">Financial Details</h4>
+                        <p><strong>Principal Amount:</strong> ₱50,000.00</p>
+                        <p><strong>Interest Rate:</strong> 12% per annum</p>
+                        <p><strong>Total Interest:</strong> ₱6,000.00</p>
+                        <p><strong>Total Payable:</strong> ₱56,000.00</p>
+                        <p><strong>Monthly Amortization:</strong> ₱4,666.67</p>
+                        <p><strong>Term:</strong> 12 Months</p>
+                    </div>
+                </div>
+
+                <h4 style="color: var(--gray-color); margin: 25px 0 15px;">Payment Schedule</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Due Date</th>
+                                <th>Amount Due</th>
+                                <th>Status</th>
+                                <th>Date Paid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Nov 20, 2023</td>
+                                <td>₱4,666.67</td>
+                                <td><span class="badge badge-success">Paid</span></td>
+                                <td>Nov 18, 2023</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Dec 20, 2023</td>
+                                <td>₱4,666.67</td>
+                                <td><span class="badge badge-success">Paid</span></td>
+                                <td>Dec 19, 2023</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Jan 20, 2024</td>
+                                <td>₱4,666.67</td>
+                                <td><span class="badge badge-warning">Upcoming</span></td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Feb 20, 2024</td>
+                                <td>₱4,666.67</td>
+                                <td><span class="badge badge-secondary">Pending</span></td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('loanDetailsModal')">Close</button>
+                <button class="btn btn-primary"><i class="fas fa-print"></i> Print Statement</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

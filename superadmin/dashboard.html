@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SuperAdmin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div>
+                    <style>
+                        .rounded {border-radius: 20%;}
+                    </style>
+                    <img src="../logo.png" class="rounded" height="45px" width="45px">
+                </div>
+                <div class="brand">
+                    <h2>Kusina University</h2>
+                    <span>SuperAdmin Panel</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main Menu</div>
+                    <a href="dashboard.html" class="nav-link active">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="accounts.html" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Accounts</span>
+                    </a>
+                    <a href="transactions.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transaction Records</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Management</div>
+                    <a href="user-management.html" class="nav-link">
+                        <i class="fas fa-user-cog"></i>
+                        <span>User Management</span>
+                    </a>
+                    <a href="reports.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Reports</span>
+                    </a>
+                    <a href="history-logs.html" class="nav-link">
+                        <i class="fas fa-history"></i>
+                        <span>History Logs</span>
+                    </a>
+                </div>
+               
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                        <span class="breadcrumb">Home / Dashboard</span>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <div class="user-dropdown">
+                        <button class="user-button" id="userBtn">
+                            <div class="user-avatar">JV</div>
+                            <div class="user-details">
+                                <h1 class="user-name">Jane Vitorillo</h1>
+                                <h2 class="user-role">SuperAdmin</h2>
+                            </div>
+                            <i class="fas fa-caret-down"></i>
+                        </button>
+                        <!-- Dropdown Menu -->
+                            <div class="dropdown-menu" id="dropdownMenu">
+                                <a href="profile.html" class="dropdown-item">
+                                    <i class="fas fa-user"></i>
+                                    Profile
+                                </a>
+                                <a href="settings.html" class="dropdown-item">
+                                    <i class="fas fa-cog"></i>
+                                    Settings
+                                </a>
+                                <hr class="dropdown-divider">
+                                <a href="../index.html" class="dropdown-item">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Logout
+                                </a>
+                            </div>
+                    </div>                   
+                </div>
+
+
+            </header>
+
+            <!-- Content -->
+            <div class="content">
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>1,234</h3>
+                            <p>Total Members</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-peso-sign"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>₱2.5M</h3>
+                            <p>Total Loans</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>45</h3>
+                            <p>Pending Requests</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon danger">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>12</h3>
+                            <p>Overdue Payments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Quick Actions</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="quick-actions">
+                            <button class="quick-action-btn" onclick="openModal('addAccountModal')">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Add New Account</span>
+                            </button>
+                            <button class="quick-action-btn" onclick="openModal('newLoanModal')">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <span>Create Loan</span>
+                            </button>
+                            <button class="quick-action-btn" onclick="openModal('depositModal')">
+                                <i class="fas fa-piggy-bank"></i>
+                                <span>Update Deposit</span>
+                            </button>
+                            <button class="quick-action-btn" onclick="openModal('paymentModal')">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Render Payment</span>
+                            </button>
+                            <button class="quick-action-btn">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Generate Report</span>
+                            </button>
+                            <button class="quick-action-btn">
+                                <i class="fas fa-print"></i>
+                                <span>Print Statement</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Transactions Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Recent Transactions</h2>
+                        <div class="card-header-actions">
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fas fa-eye"></i> View All
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Trans. ID</th>
+                                        <th>Member</th>
+                                        <th>Type</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#TRX-001</td>
+                                        <td>John Doe</td>
+                                        <td>Loan</td>
+                                        <td>₱50,000</td>
+                                        <td>2024-01-15</td>
+                                        <td><span class="badge badge-success">Approved</span></td>
+                                        <td class="table-actions">
+                                            <button class="btn btn-primary btn-sm" onclick="viewRecord(1)">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-warning btn-sm" onclick="editRecord(1)">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#TRX-002</td>
+                                        <td>Jane Smith</td>
+                                        <td>Payment</td>
+                                        <td>₱5,000</td>
+                                        <td>2024-01-14</td>
+                                        <td><span class="badge badge-success">Completed</span></td>
+                                        <td class="table-actions">
+                                            <button class="btn btn-primary btn-sm" onclick="viewRecord(2)">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-warning btn-sm" onclick="editRecord(2)">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#TRX-003</td>
+                                        <td>Mike Johnson</td>
+                                        <td>Deposit</td>
+                                        <td>₱10,000</td>
+                                        <td>2024-01-14</td>
+                                        <td><span class="badge badge-warning">Pending</span></td>
+                                        <td class="table-actions">
+                                            <button class="btn btn-primary btn-sm" onclick="viewRecord(3)">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-warning btn-sm" onclick="editRecord(3)">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#TRX-004</td>
+                                        <td>Sarah Williams</td>
+                                        <td>Loan</td>
+                                        <td>₱25,000</td>
+                                        <td>2024-01-13</td>
+                                        <td><span class="badge badge-danger">Overdue</span></td>
+                                        <td class="table-actions">
+                                            <button class="btn btn-primary btn-sm" onclick="viewRecord(4)">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-warning btn-sm" onclick="editRecord(4)">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Account Modal -->
+    <div class="modal-overlay" id="addAccountModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> Add New Account</h3>
+                <button class="modal-close" onclick="closeModal('addAccountModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" placeholder="Enter first name">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" placeholder="Enter last name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" placeholder="Enter email address">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-control" placeholder="Enter phone number">
+                    </div>
+                    <div class="form-group">
+                        <label>User Role</label>
+                        <select class="form-control">
+                            <option value="">Select Role</option>
+                            <option value="admin">Admin</option>
+                            <option value="manager">Manager</option>
+                            <option value="member">Member</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea class="form-control" placeholder="Enter complete address"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('addAccountModal')">Cancel</button>
+                <button class="btn btn-primary">
+                    <i class="fas fa-save"></i> Save Account
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Loan Modal -->
+    <div class="modal-overlay" id="newLoanModal">
+        <div class="modal modal-lg">
+            <div class="modal-header">
+                <h3><i class="fas fa-hand-holding-usd"></i> Create New Loan</h3>
+                <button class="modal-close" onclick="closeModal('newLoanModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <h4 style="margin-bottom: 20px; color: var(--gray-color);">Member Information</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Select Member</label>
+                            <select class="form-control">
+                                <option value="">Search or Select Member</option>
+                                <option value="1">John Doe - MEM001</option>
+                                <option value="2">Jane Smith - MEM002</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Member ID</label>
+                            <input type="text" class="form-control" placeholder="Auto-filled" disabled>
+                        </div>
+                    </div>
+
+                    <h4 style="margin: 25px 0 20px; color: var(--gray-color);">Loan Details</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Loan Amount</label>
+                            <input type="number" class="form-control" placeholder="Enter loan amount">
+                        </div>
+                        <div class="form-group">
+                            <label>Loan Type</label>
+                            <select class="form-control">
+                                <option value="">Select Loan Type</option>
+                                <option value="personal">Personal Loan</option>
+                                <option value="business">Business Loan</option>
+                                <option value="emergency">Emergency Loan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Interest Rate (%)</label>
+                            <input type="number" class="form-control" placeholder="Enter interest rate">
+                        </div>
+                        <div class="form-group">
+                            <label>Term (Months)</label>
+                            <select class="form-control">
+                                <option value="">Select Term</option>
+                                <option value="6">6 Months</option>
+                                <option value="12">12 Months</option>
+                                <option value="24">24 Months</option>
+                                <option value="36">36 Months</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h4 style="margin: 25px 0 20px; color: var(--gray-color);">Requirements</h4>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox"> Valid ID (2 Government Issued IDs)
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox"> Proof of Income / Employment Certificate
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox"> Proof of Billing Address
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox"> Co-maker / Guarantor Information
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Purpose of Loan</label>
+                        <textarea class="form-control" placeholder="Enter purpose of loan"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('newLoanModal')">Cancel</button>
+                <button class="btn btn-primary">
+                    <i class="fas fa-check"></i> Submit Loan Application
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deposit Modal -->
+    <div class="modal-overlay" id="depositModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-piggy-bank"></i> Update Deposit</h3>
+                <button class="modal-close" onclick="closeModal('depositModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Select Member</label>
+                        <select class="form-control">
+                            <option value="">Search or Select Member</option>
+                            <option value="1">John Doe - MEM001</option>
+                            <option value="2">Jane Smith - MEM002</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Current Balance</label>
+                        <input type="text" class="form-control" value="₱15,000.00" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Deposit Amount</label>
+                        <input type="number" class="form-control" placeholder="Enter deposit amount">
+                    </div>
+                    <div class="form-group">
+                        <label>Deposit Type</label>
+                        <select class="form-control">
+                            <option value="">Select Type</option>
+                            <option value="cash">Cash</option>
+                            <option value="check">Check</option>
+                            <option value="transfer">Bank Transfer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Reference Number (Optional)</label>
+                        <input type="text" class="form-control" placeholder="Enter reference number">
+                    </div>
+                    <div class="form-group">
+                        <label>Notes</label>
+                        <textarea class="form-control" placeholder="Additional notes"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('depositModal')">Cancel</button>
+                <button class="btn btn-success">
+                    <i class="fas fa-plus"></i> Process Deposit
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal-overlay" id="paymentModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-money-bill-wave"></i> Render Payment</h3>
+                <button class="modal-close" onclick="closeModal('paymentModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Select Member</label>
+                        <select class="form-control">
+                            <option value="">Search or Select Member</option>
+                            <option value="1">John Doe - MEM001</option>
+                            <option value="2">Jane Smith - MEM002</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Loan</label>
+                        <select class="form-control">
+                            <option value="">Select Active Loan</option>
+                            <option value="1">Loan #LN001 - ₱50,000 (Personal)</option>
+                            <option value="2">Loan #LN002 - ₱25,000 (Emergency)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Outstanding Balance</label>
+                        <input type="text" class="form-control" value="₱42,500.00" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Monthly Due</label>
+                        <input type="text" class="form-control" value="₱4,583.33" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Amount</label>
+                        <input type="number" class="form-control" placeholder="Enter payment amount">
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <select class="form-control">
+                            <option value="">Select Method</option>
+                            <option value="cash">Cash</option>
+                            <option value="check">Check</option>
+                            <option value="transfer">Bank Transfer</option>
+                            <option value="gcash">GCash</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('paymentModal')">Cancel</button>
+                <button class="btn btn-success">
+                    <i class="fas fa-check"></i> Process Payment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
